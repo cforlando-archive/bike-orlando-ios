@@ -21,11 +21,11 @@
     
     self.bikeRacksArray = [NSMutableArray new];
     
-    
-    
     [self loadBikeRacks];
     
     // Do any additional setup after loading the view.
+    
+    [self.coordinateQuadTree buildTreeWithFeatures:self.bikeRacksArray];
 }
 
 -(void)loadBikeRacks {
@@ -40,6 +40,10 @@
     for (NSDictionary *featureDict in features) {
         Feature *feature = [[Feature alloc] initWithDictionary:featureDict];
         [self.bikeRacksArray addObject:feature];
+    }
+    
+    for (Feature *feature in self.bikeRacksArray) {
+        
     }
 }
 

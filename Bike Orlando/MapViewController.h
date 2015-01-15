@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "TBMapViewController.h"
 
-@interface MapViewController : UIViewController <MKMapViewDelegate>
+@interface MapViewController : TBMapViewController <MKMapViewDelegate>
 
 @end

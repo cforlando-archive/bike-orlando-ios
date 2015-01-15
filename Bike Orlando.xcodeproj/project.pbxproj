@@ -22,6 +22,12 @@
 		D757B28A1A62FD790038616C /* Feature.m in Sources */ = {isa = PBXBuildFile; fileRef = D757B2891A62FD790038616C /* Feature.m */; };
 		D757B28C1A62FD8B0038616C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D757B28B1A62FD8B0038616C /* CoreLocation.framework */; };
 		D79511F31A67792E0016CF46 /* NSString+CFO.m in Sources */ = {isa = PBXBuildFile; fileRef = D79511F21A67792E0016CF46 /* NSString+CFO.m */; };
+		D79512001A677F0D0016CF46 /* TBClusterAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D79511F71A677F0D0016CF46 /* TBClusterAnnotation.m */; };
+		D79512011A677F0D0016CF46 /* TBClusterAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D79511F91A677F0D0016CF46 /* TBClusterAnnotationView.m */; };
+		D79512021A677F0D0016CF46 /* TBCoordinateQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = D79511FB1A677F0D0016CF46 /* TBCoordinateQuadTree.m */; };
+		D79512031A677F0D0016CF46 /* TBMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79511FD1A677F0D0016CF46 /* TBMapViewController.m */; };
+		D79512041A677F0D0016CF46 /* TBQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = D79511FF1A677F0D0016CF46 /* TBQuadTree.m */; };
+		D79512061A6784670016CF46 /* USA-HotelMotel.csv in Resources */ = {isa = PBXBuildFile; fileRef = D79512051A6784670016CF46 /* USA-HotelMotel.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +65,17 @@
 		D757B28B1A62FD8B0038616C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D79511F11A67792E0016CF46 /* NSString+CFO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CFO.h"; sourceTree = "<group>"; };
 		D79511F21A67792E0016CF46 /* NSString+CFO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CFO.m"; sourceTree = "<group>"; };
+		D79511F61A677F0D0016CF46 /* TBClusterAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBClusterAnnotation.h; sourceTree = "<group>"; };
+		D79511F71A677F0D0016CF46 /* TBClusterAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBClusterAnnotation.m; sourceTree = "<group>"; };
+		D79511F81A677F0D0016CF46 /* TBClusterAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBClusterAnnotationView.h; sourceTree = "<group>"; };
+		D79511F91A677F0D0016CF46 /* TBClusterAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBClusterAnnotationView.m; sourceTree = "<group>"; };
+		D79511FA1A677F0D0016CF46 /* TBCoordinateQuadTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCoordinateQuadTree.h; sourceTree = "<group>"; };
+		D79511FB1A677F0D0016CF46 /* TBCoordinateQuadTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCoordinateQuadTree.m; sourceTree = "<group>"; };
+		D79511FC1A677F0D0016CF46 /* TBMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBMapViewController.h; sourceTree = "<group>"; };
+		D79511FD1A677F0D0016CF46 /* TBMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBMapViewController.m; sourceTree = "<group>"; };
+		D79511FE1A677F0D0016CF46 /* TBQuadTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBQuadTree.h; sourceTree = "<group>"; };
+		D79511FF1A677F0D0016CF46 /* TBQuadTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBQuadTree.m; sourceTree = "<group>"; };
+		D79512051A6784670016CF46 /* USA-HotelMotel.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "USA-HotelMotel.csv"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +121,7 @@
 		D757B2521A61B9360038616C /* Bike Orlando */ = {
 			isa = PBXGroup;
 			children = (
+				D79511F41A677EF70016CF46 /* Libraries */,
 				D79511F01A6778FF0016CF46 /* Categories */,
 				D757B2871A62FD630038616C /* Models */,
 				D757B2861A62FCC60038616C /* Controllers */,
@@ -181,6 +199,32 @@
 				D79511F21A67792E0016CF46 /* NSString+CFO.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		D79511F41A677EF70016CF46 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				D79511F51A677EFF0016CF46 /* TBAnnotationClustering */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		D79511F51A677EFF0016CF46 /* TBAnnotationClustering */ = {
+			isa = PBXGroup;
+			children = (
+				D79512051A6784670016CF46 /* USA-HotelMotel.csv */,
+				D79511F61A677F0D0016CF46 /* TBClusterAnnotation.h */,
+				D79511F71A677F0D0016CF46 /* TBClusterAnnotation.m */,
+				D79511F81A677F0D0016CF46 /* TBClusterAnnotationView.h */,
+				D79511F91A677F0D0016CF46 /* TBClusterAnnotationView.m */,
+				D79511FA1A677F0D0016CF46 /* TBCoordinateQuadTree.h */,
+				D79511FB1A677F0D0016CF46 /* TBCoordinateQuadTree.m */,
+				D79511FC1A677F0D0016CF46 /* TBMapViewController.h */,
+				D79511FD1A677F0D0016CF46 /* TBMapViewController.m */,
+				D79511FE1A677F0D0016CF46 /* TBQuadTree.h */,
+				D79511FF1A677F0D0016CF46 /* TBQuadTree.m */,
+			);
+			name = TBAnnotationClustering;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +310,7 @@
 				D757B2621A61B9360038616C /* Main.storyboard in Resources */,
 				D757B2671A61B9360038616C /* LaunchScreen.xib in Resources */,
 				D757B2831A62FB590038616C /* bike_lanes.geojson in Resources */,
+				D79512061A6784670016CF46 /* USA-HotelMotel.csv in Resources */,
 				D757B2841A62FB590038616C /* bike_parking.geojson in Resources */,
 				D757B2641A61B9360038616C /* Images.xcassets in Resources */,
 			);
@@ -285,10 +330,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D79512041A677F0D0016CF46 /* TBQuadTree.m in Sources */,
 				D757B25C1A61B9360038616C /* Bike_Orlando.xcdatamodeld in Sources */,
 				D757B2591A61B9360038616C /* AppDelegate.m in Sources */,
+				D79512031A677F0D0016CF46 /* TBMapViewController.m in Sources */,
+				D79512021A677F0D0016CF46 /* TBCoordinateQuadTree.m in Sources */,
 				D757B27E1A62FAAB0038616C /* MapViewController.m in Sources */,
+				D79512001A677F0D0016CF46 /* TBClusterAnnotation.m in Sources */,
 				D79511F31A67792E0016CF46 /* NSString+CFO.m in Sources */,
+				D79512011A677F0D0016CF46 /* TBClusterAnnotationView.m in Sources */,
 				D757B25F1A61B9360038616C /* ViewController.m in Sources */,
 				D757B28A1A62FD790038616C /* Feature.m in Sources */,
 				D757B2561A61B9360038616C /* main.m in Sources */,
