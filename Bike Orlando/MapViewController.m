@@ -17,34 +17,36 @@
 @implementation MapViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
     self.bikeRacksArray = [NSMutableArray new];
     
     [self loadBikeRacks];
     
-    // Do any additional setup after loading the view.
-    
+    // Build out the quad tree using the feature (bike rack) models
+
     [self.coordinateQuadTree buildTreeWithFeatures:self.bikeRacksArray];
+    
+    [self.mapView setRegion:MKCoordinateRegionMake(CLLocationCoordinate2DMake(28.521419, -81.385143), MKCoordinateSpanMake(.5, .5))];
 }
 
 -(void)loadBikeRacks {
+    
+    // Load our bike racks JSON and get the array of 'features'
     NSString *filename = [[NSBundle mainBundle] pathForResource:@"bike_parking" ofType:@"geojson"];
     NSData *data = [NSData dataWithContentsOfFile:filename];
     NSError *error;
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-    
     NSArray *features = [json objectForKey:@"features"];
     
+    // Build out array of bike racks from JSON
     [self.bikeRacksArray removeAllObjects];
     for (NSDictionary *featureDict in features) {
         Feature *feature = [[Feature alloc] initWithDictionary:featureDict];
         [self.bikeRacksArray addObject:feature];
     }
     
-    for (Feature *feature in self.bikeRacksArray) {
-        
-    }
 }
 
 - (void)didReceiveMemoryWarning {

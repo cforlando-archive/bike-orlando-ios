@@ -11,7 +11,6 @@
 #import "TBClusterAnnotation.h"
 
 @interface TBMapViewController () <MKMapViewDelegate>
-@property (strong, nonatomic) MKMapView *mapView;
 @end
 
 @implementation TBMapViewController

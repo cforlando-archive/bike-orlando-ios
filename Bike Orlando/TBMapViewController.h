@@ -12,5 +12,6 @@
 @interface TBMapViewController : UIViewController
 
 @property (strong, nonatomic) TBCoordinateQuadTree *coordinateQuadTree;
+@property (strong, nonatomic) MKMapView *mapView;
 
 @end
