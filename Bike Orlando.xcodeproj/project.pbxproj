@@ -15,6 +15,13 @@
 		D757B2641A61B9360038616C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D757B2631A61B9360038616C /* Images.xcassets */; };
 		D757B2671A61B9360038616C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D757B2651A61B9360038616C /* LaunchScreen.xib */; };
 		D757B2731A61B9360038616C /* Bike_OrlandoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D757B2721A61B9360038616C /* Bike_OrlandoTests.m */; };
+		D757B27E1A62FAAB0038616C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D757B27D1A62FAAB0038616C /* MapViewController.m */; };
+		D757B2801A62FB1B0038616C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D757B27F1A62FB1B0038616C /* MapKit.framework */; };
+		D757B2831A62FB590038616C /* bike_lanes.geojson in Resources */ = {isa = PBXBuildFile; fileRef = D757B2811A62FB590038616C /* bike_lanes.geojson */; };
+		D757B2841A62FB590038616C /* bike_parking.geojson in Resources */ = {isa = PBXBuildFile; fileRef = D757B2821A62FB590038616C /* bike_parking.geojson */; };
+		D757B28A1A62FD790038616C /* Feature.m in Sources */ = {isa = PBXBuildFile; fileRef = D757B2891A62FD790038616C /* Feature.m */; };
+		D757B28C1A62FD8B0038616C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D757B28B1A62FD8B0038616C /* CoreLocation.framework */; };
+		D79511F31A67792E0016CF46 /* NSString+CFO.m in Sources */ = {isa = PBXBuildFile; fileRef = D79511F21A67792E0016CF46 /* NSString+CFO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +49,16 @@
 		D757B26C1A61B9360038616C /* Bike OrlandoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bike OrlandoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D757B2711A61B9360038616C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D757B2721A61B9360038616C /* Bike_OrlandoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bike_OrlandoTests.m; sourceTree = "<group>"; };
+		D757B27C1A62FAAB0038616C /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		D757B27D1A62FAAB0038616C /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		D757B27F1A62FB1B0038616C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D757B2811A62FB590038616C /* bike_lanes.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bike_lanes.geojson; sourceTree = "<group>"; };
+		D757B2821A62FB590038616C /* bike_parking.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bike_parking.geojson; sourceTree = "<group>"; };
+		D757B2881A62FD790038616C /* Feature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feature.h; sourceTree = "<group>"; };
+		D757B2891A62FD790038616C /* Feature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feature.m; sourceTree = "<group>"; };
+		D757B28B1A62FD8B0038616C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D79511F11A67792E0016CF46 /* NSString+CFO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CFO.h"; sourceTree = "<group>"; };
+		D79511F21A67792E0016CF46 /* NSString+CFO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CFO.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D757B28C1A62FD8B0038616C /* CoreLocation.framework in Frameworks */,
+				D757B2801A62FB1B0038616C /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +84,8 @@
 		D757B2471A61B9360038616C = {
 			isa = PBXGroup;
 			children = (
+				D757B28B1A62FD8B0038616C /* CoreLocation.framework */,
+				D757B27F1A62FB1B0038616C /* MapKit.framework */,
 				D757B2521A61B9360038616C /* Bike Orlando */,
 				D757B26F1A61B9360038616C /* Bike OrlandoTests */,
 				D757B2511A61B9360038616C /* Products */,
@@ -83,10 +104,12 @@
 		D757B2521A61B9360038616C /* Bike Orlando */ = {
 			isa = PBXGroup;
 			children = (
+				D79511F01A6778FF0016CF46 /* Categories */,
+				D757B2871A62FD630038616C /* Models */,
+				D757B2861A62FCC60038616C /* Controllers */,
+				D757B2851A62FB640038616C /* Resources */,
 				D757B2571A61B9360038616C /* AppDelegate.h */,
 				D757B2581A61B9360038616C /* AppDelegate.m */,
-				D757B25D1A61B9360038616C /* ViewController.h */,
-				D757B25E1A61B9360038616C /* ViewController.m */,
 				D757B2601A61B9360038616C /* Main.storyboard */,
 				D757B2631A61B9360038616C /* Images.xcassets */,
 				D757B2651A61B9360038616C /* LaunchScreen.xib */,
@@ -120,6 +143,44 @@
 				D757B2711A61B9360038616C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D757B2851A62FB640038616C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D757B2811A62FB590038616C /* bike_lanes.geojson */,
+				D757B2821A62FB590038616C /* bike_parking.geojson */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D757B2861A62FCC60038616C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D757B27C1A62FAAB0038616C /* MapViewController.h */,
+				D757B27D1A62FAAB0038616C /* MapViewController.m */,
+				D757B25D1A61B9360038616C /* ViewController.h */,
+				D757B25E1A61B9360038616C /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D757B2871A62FD630038616C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D757B2881A62FD790038616C /* Feature.h */,
+				D757B2891A62FD790038616C /* Feature.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		D79511F01A6778FF0016CF46 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				D79511F11A67792E0016CF46 /* NSString+CFO.h */,
+				D79511F21A67792E0016CF46 /* NSString+CFO.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +265,8 @@
 			files = (
 				D757B2621A61B9360038616C /* Main.storyboard in Resources */,
 				D757B2671A61B9360038616C /* LaunchScreen.xib in Resources */,
+				D757B2831A62FB590038616C /* bike_lanes.geojson in Resources */,
+				D757B2841A62FB590038616C /* bike_parking.geojson in Resources */,
 				D757B2641A61B9360038616C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,7 +287,10 @@
 			files = (
 				D757B25C1A61B9360038616C /* Bike_Orlando.xcdatamodeld in Sources */,
 				D757B2591A61B9360038616C /* AppDelegate.m in Sources */,
+				D757B27E1A62FAAB0038616C /* MapViewController.m in Sources */,
+				D79511F31A67792E0016CF46 /* NSString+CFO.m in Sources */,
 				D757B25F1A61B9360038616C /* ViewController.m in Sources */,
+				D757B28A1A62FD790038616C /* Feature.m in Sources */,
 				D757B2561A61B9360038616C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +482,7 @@
 				D757B2781A61B9360038616C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D757B2791A61B9360038616C /* Build configuration list for PBXNativeTarget "Bike OrlandoTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +491,7 @@
 				D757B27B1A61B9360038616C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
