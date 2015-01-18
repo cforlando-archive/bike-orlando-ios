@@ -8,7 +8,7 @@
 
 #import "TBCoordinateQuadTree.h"
 #import "TBClusterAnnotation.h"
-#import "Feature.h"
+#import "BikeRack.h"
 
 typedef struct TBItemInfo {
     char* title;
@@ -106,13 +106,12 @@ float TBCellSizeForZoomScale(MKZoomScale zoomScale)
     }
 }
 
-- (void)buildTreeWithFeatures:(NSArray *)features {
+- (void)buildTreeWithBikeRacks:(NSArray *)bikeRacks {
     @autoreleasepool {
-
-        int featureCount = (int)[features count];
+        int featureCount = (int)[bikeRacks count];
         TBQuadTreeNodeData *dataArray = malloc(sizeof(TBQuadTreeNodeData) * featureCount);
         for (int i=0; i < featureCount; i++) {
-            Feature *feature = features[i];
+            BikeRack *feature = bikeRacks[i];
             NSString *line = [NSString stringWithFormat:@"%f,%f,%@,%@", feature.coordinate.latitude, feature.coordinate.longitude, feature.addressString, feature.ownershipString];
             dataArray[i] = TBDataFromLine(line);
         }

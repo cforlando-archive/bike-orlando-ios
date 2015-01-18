@@ -19,8 +19,9 @@
 		D757B2801A62FB1B0038616C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D757B27F1A62FB1B0038616C /* MapKit.framework */; };
 		D757B2831A62FB590038616C /* bike_lanes.geojson in Resources */ = {isa = PBXBuildFile; fileRef = D757B2811A62FB590038616C /* bike_lanes.geojson */; };
 		D757B2841A62FB590038616C /* bike_parking.geojson in Resources */ = {isa = PBXBuildFile; fileRef = D757B2821A62FB590038616C /* bike_parking.geojson */; };
-		D757B28A1A62FD790038616C /* Feature.m in Sources */ = {isa = PBXBuildFile; fileRef = D757B2891A62FD790038616C /* Feature.m */; };
+		D757B28A1A62FD790038616C /* BikeRack.m in Sources */ = {isa = PBXBuildFile; fileRef = D757B2891A62FD790038616C /* BikeRack.m */; };
 		D757B28C1A62FD8B0038616C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D757B28B1A62FD8B0038616C /* CoreLocation.framework */; };
+		D768DB171A6899C000140DB4 /* BikePath.m in Sources */ = {isa = PBXBuildFile; fileRef = D768DB161A6899C000140DB4 /* BikePath.m */; };
 		D79511F31A67792E0016CF46 /* NSString+CFO.m in Sources */ = {isa = PBXBuildFile; fileRef = D79511F21A67792E0016CF46 /* NSString+CFO.m */; };
 		D79512001A677F0D0016CF46 /* TBClusterAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D79511F71A677F0D0016CF46 /* TBClusterAnnotation.m */; };
 		D79512011A677F0D0016CF46 /* TBClusterAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D79511F91A677F0D0016CF46 /* TBClusterAnnotationView.m */; };
@@ -60,9 +61,11 @@
 		D757B27F1A62FB1B0038616C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D757B2811A62FB590038616C /* bike_lanes.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bike_lanes.geojson; sourceTree = "<group>"; };
 		D757B2821A62FB590038616C /* bike_parking.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bike_parking.geojson; sourceTree = "<group>"; };
-		D757B2881A62FD790038616C /* Feature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feature.h; sourceTree = "<group>"; };
-		D757B2891A62FD790038616C /* Feature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feature.m; sourceTree = "<group>"; };
+		D757B2881A62FD790038616C /* BikeRack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BikeRack.h; sourceTree = "<group>"; };
+		D757B2891A62FD790038616C /* BikeRack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BikeRack.m; sourceTree = "<group>"; };
 		D757B28B1A62FD8B0038616C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D768DB151A6899C000140DB4 /* BikePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BikePath.h; sourceTree = "<group>"; };
+		D768DB161A6899C000140DB4 /* BikePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BikePath.m; sourceTree = "<group>"; };
 		D79511F11A67792E0016CF46 /* NSString+CFO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CFO.h"; sourceTree = "<group>"; };
 		D79511F21A67792E0016CF46 /* NSString+CFO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CFO.m"; sourceTree = "<group>"; };
 		D79511F61A677F0D0016CF46 /* TBClusterAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBClusterAnnotation.h; sourceTree = "<group>"; };
@@ -186,8 +189,10 @@
 		D757B2871A62FD630038616C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D757B2881A62FD790038616C /* Feature.h */,
-				D757B2891A62FD790038616C /* Feature.m */,
+				D757B2881A62FD790038616C /* BikeRack.h */,
+				D757B2891A62FD790038616C /* BikeRack.m */,
+				D768DB151A6899C000140DB4 /* BikePath.h */,
+				D768DB161A6899C000140DB4 /* BikePath.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -336,11 +341,12 @@
 				D79512031A677F0D0016CF46 /* TBMapViewController.m in Sources */,
 				D79512021A677F0D0016CF46 /* TBCoordinateQuadTree.m in Sources */,
 				D757B27E1A62FAAB0038616C /* MapViewController.m in Sources */,
+				D768DB171A6899C000140DB4 /* BikePath.m in Sources */,
 				D79512001A677F0D0016CF46 /* TBClusterAnnotation.m in Sources */,
 				D79511F31A67792E0016CF46 /* NSString+CFO.m in Sources */,
 				D79512011A677F0D0016CF46 /* TBClusterAnnotationView.m in Sources */,
 				D757B25F1A61B9360038616C /* ViewController.m in Sources */,
-				D757B28A1A62FD790038616C /* Feature.m in Sources */,
+				D757B28A1A62FD790038616C /* BikeRack.m in Sources */,
 				D757B2561A61B9360038616C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

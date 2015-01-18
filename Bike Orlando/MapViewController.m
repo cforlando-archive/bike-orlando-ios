@@ -7,7 +7,8 @@
 //
 
 #import "MapViewController.h"
-#import "Feature.h"
+#import "BikeRack.h"
+#import "BikePath.h"
 
 @interface MapViewController ()
 
@@ -20,13 +21,16 @@
     
     [super viewDidLoad];
     
+    self.title = @"Bike Orlando";
+    
     self.bikeRacksArray = [NSMutableArray new];
     
     [self loadBikeRacks];
+    [self loadBikePaths];
     
     // Build out the quad tree using the feature (bike rack) models
 
-    [self.coordinateQuadTree buildTreeWithFeatures:self.bikeRacksArray];
+    [self.coordinateQuadTree buildTreeWithBikeRacks:self.bikeRacksArray];
     
     [self.mapView setRegion:MKCoordinateRegionMake(CLLocationCoordinate2DMake(28.521419, -81.385143), MKCoordinateSpanMake(.5, .5))];
 }
@@ -43,10 +47,25 @@
     // Build out array of bike racks from JSON
     [self.bikeRacksArray removeAllObjects];
     for (NSDictionary *featureDict in features) {
-        Feature *feature = [[Feature alloc] initWithDictionary:featureDict];
+        BikeRack *feature = [[BikeRack alloc] initWithDictionary:featureDict];
         [self.bikeRacksArray addObject:feature];
     }
+}
+
+-(void)loadBikePaths {
+    NSString *filename = [[NSBundle mainBundle] pathForResource:@"bike_lanes" ofType:@"geojson"];
+    NSData *data = [NSData dataWithContentsOfFile:filename];
+    NSError *error;
     
+    NSDictionary *json;
+    
+    if ((json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error])) {
+        NSArray *paths = [json objectForKey:@"features"];
+        
+        for (NSDictionary *pathDict in paths) {
+            BikePath *path = [[BikePath alloc] initWithDictionary:pathDict];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {

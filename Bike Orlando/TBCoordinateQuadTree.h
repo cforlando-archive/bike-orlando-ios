@@ -16,7 +16,7 @@
 @property (strong, nonatomic) MKMapView *mapView;
 
 - (void)buildTree;
-- (void)buildTreeWithFeatures:(NSArray *)features;
+- (void)buildTreeWithBikeRacks:(NSArray *)bikeRacks;
 - (NSArray *)clusteredAnnotationsWithinMapRect:(MKMapRect)rect withZoomScale:(double)zoomScale;
 
 @end

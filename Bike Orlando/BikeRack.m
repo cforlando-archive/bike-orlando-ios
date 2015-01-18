@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Andrew Kozlik. All rights reserved.
 //
 
-#import "Feature.h"
+#import "BikeRack.h"
 #import "NSString+CFO.h"
 
-@implementation Feature
+@implementation BikeRack
 
 - (id)initWithDictionary:(NSDictionary *)dict {
     self = [super init];

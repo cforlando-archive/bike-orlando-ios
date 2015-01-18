@@ -14,7 +14,7 @@ typedef enum {
 } BikeRackType;
 
 
-@interface Feature : NSObject
+@interface BikeRack : NSObject
 
 @property CLLocationCoordinate2D coordinate;
 @property (nonatomic, retain) NSString *addressString;
