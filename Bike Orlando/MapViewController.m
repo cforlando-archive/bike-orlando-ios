@@ -11,7 +11,6 @@
 #import "BikePath.h"
 #import "TBClusterAnnotationView.h"
 #import "TBClusterAnnotation.h"
-#import "Feature.h"
 
 @interface MapViewController ()
 
