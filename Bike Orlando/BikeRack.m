@@ -33,8 +33,6 @@
         if ([descriptionDict objectForKey:@"Ownership"]) {
             self.ownershipString = [descriptionDict objectForKey:@"Ownership"];
         }
-        
-        NSLog(@"%@", self.ownershipString);
     }
     
     return self;

@@ -25,15 +25,27 @@
     NSMutableArray *arr = [NSMutableArray new];
     
     NSArray *coords = (NSArray *)[geoCoordinates objectForKey:@"coordinates"];
-
-    NSLog(@"%@", coords);
     for (NSArray *coordArray in coords) {
-        NSLog(@"%@", coordArray);
         if ([coordArray count] > 1) {
-            double lat = [coordArray[1] doubleValue];
-            double lng = [coordArray[0] doubleValue];
-//            CLLocation *location = [[CLLocation alloc] initWithLatitude:[coordArray[1] doubleValue] longitude:[coordArray[0] doubleValue]];
-//            [arr addObject:location];
+            
+            CLLocation *location;
+            
+            if ([coordArray[0] respondsToSelector:@selector(doubleValue)]) {
+                
+                double lat = [coordArray[1] doubleValue];
+                double lng = [coordArray[0] doubleValue];
+                
+                location = [[CLLocation alloc] initWithLatitude:lat longitude:lng];
+                [arr addObject:location];
+            } else {
+                for (NSArray *array in coordArray) {
+                    double lat = [array[1] doubleValue];
+                    double lng = [array[0] doubleValue];
+                    
+                    location = [[CLLocation alloc] initWithLatitude:lat longitude:lng];
+                    [arr addObject:location];
+                }
+            }
         }
     }
     

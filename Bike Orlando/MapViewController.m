@@ -61,13 +61,38 @@
     
     NSDictionary *json;
     
+    NSMutableArray *pathsArray = [NSMutableArray new];
     if ((json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error])) {
         NSArray *paths = [json objectForKey:@"features"];
         
         for (NSDictionary *pathDict in paths) {
             BikePath *path = [[BikePath alloc] initWithDictionary:pathDict];
+            [pathsArray addObject:path];
         }
     }
+    
+    BikePath *firstPath = [pathsArray firstObject];
+
+    for (BikePath *path in pathsArray) {
+        
+        NSUInteger count = [path.coordinates count];
+        
+        CLLocationCoordinate2D coordinate[[path.coordinates count]];
+        
+        for (NSUInteger i = 0; i < count; i++) {
+            CLLocation *loc = path.coordinates[i];
+            coordinate[i] = loc.coordinate;
+        }
+        
+        MKPolyline *polyine = [MKPolyline polylineWithCoordinates:coordinate count:count];
+        [self.mapView addOverlay:polyine];
+    }
+    
+//    MKPolyline *polyline = [MKPolyline polylineWithCoordinates:firstPath.coordinates count:1];
+//    [self.mapView addOverlay:polyline];
+//    self.polyline = polyline;
+
+    
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
@@ -89,7 +114,19 @@
     return annotationView;
 }
 
+-(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
+    if ([overlay isKindOfClass:[MKPolyline class]]) {
+        MKPolyline *route = overlay;
+        MKPolylineRenderer *routeRenderer = [[MKPolylineRenderer alloc] initWithPolyline:route];
+        routeRenderer.strokeColor = [UIColor blueColor];
+        routeRenderer.lineWidth = 3;
+        return routeRenderer;
+    }
+    else return nil;
+}
+
 - (void)didReceiveMemoryWarning {
+
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
