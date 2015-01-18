@@ -9,6 +9,9 @@
 #import "MapViewController.h"
 #import "BikeRack.h"
 #import "BikePath.h"
+#import "TBClusterAnnotationView.h"
+#import "TBClusterAnnotation.h"
+#import "Feature.h"
 
 @interface MapViewController ()
 
@@ -66,6 +69,25 @@
             BikePath *path = [[BikePath alloc] initWithDictionary:pathDict];
         }
     }
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    static NSString *const TBAnnotatioViewReuseID = @"TBAnnotatioViewReuseID";
+    
+    TBClusterAnnotationView *annotationView = (TBClusterAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:TBAnnotatioViewReuseID];
+    
+    if (!annotationView) {
+        annotationView = [[TBClusterAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:TBAnnotatioViewReuseID];
+    }
+    
+    annotationView.canShowCallout = YES;
+    annotationView.count = [(TBClusterAnnotation *)annotation count];
+
+    [annotationView.countLabel setTextColor:[UIColor blackColor]];
+    
+    annotationView.innerCircleFillColor = [UIColor whiteColor];
+    
+    return annotationView;
 }
 
 - (void)didReceiveMemoryWarning {
