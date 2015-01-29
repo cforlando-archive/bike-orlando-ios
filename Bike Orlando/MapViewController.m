@@ -107,9 +107,10 @@
     annotationView.canShowCallout = YES;
     annotationView.count = [(TBClusterAnnotation *)annotation count];
 
-    [annotationView.countLabel setTextColor:[UIColor blackColor]];
+    annotationView.countLabel.textColor = [UIColor whiteColor];
+    annotationView.countLabel.font = [UIFont systemFontOfSize:25];
     
-    annotationView.innerCircleFillColor = [UIColor whiteColor];
+    annotationView.innerCircleFillColor = [UIColor orangeColor];
     
     return annotationView;
 }
